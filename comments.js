@@ -1,19 +1,7 @@
 // create web server
 const express = require('express');
 const app = express();
+const port = 3000;
 
-// create web server
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
-
-// create a new comment
-app.post('/comments', (req, res) => {
-  const comment = req.body;
-  res.json(comment);
-});
-
-// start server
-app.listen(4001, () => {
-  console.log('Comments service started on port 4001');
-});
-
+// import comments data
+const comments = require('./comments.json');
